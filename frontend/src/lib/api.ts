@@ -5,6 +5,7 @@ import {
   BrokersApi,
   MessagesApi,
   ClustersApi,
+  CertificatesApi,
   Configuration,
   KafkaConnectApi,
   ConsumerGroupsApi,
@@ -23,6 +24,7 @@ export const brokersApiClient = new BrokersApi(apiClientConf);
 export const schemasApiClient = new SchemasApi(apiClientConf);
 export const messagesApiClient = new MessagesApi(apiClientConf);
 export const clustersApiClient = new ClustersApi(apiClientConf);
+export const certificatesApiClient = new CertificatesApi(apiClientConf);
 export const kafkaConnectApiClient = new KafkaConnectApi(apiClientConf);
 export const consumerGroupsApiClient = new ConsumerGroupsApi(apiClientConf);
 export const authApiClient = new AuthorizationApi(apiClientConf);

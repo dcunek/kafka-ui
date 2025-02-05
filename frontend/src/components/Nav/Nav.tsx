@@ -13,6 +13,13 @@ const Nav: FC = () => {
       <S.List>
         <MenuItem variant="primary" to="/" title="Dashboard" />
       </S.List>
+      <S.List>
+        <MenuItem
+          variant="primary"
+          to="/ui/certificates"
+          title="Certificates"
+        />
+      </S.List>
       {clusters.isSuccess &&
         clusters.data.map((cluster) => (
           <ClusterMenu

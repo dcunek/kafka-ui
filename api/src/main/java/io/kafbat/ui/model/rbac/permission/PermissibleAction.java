@@ -6,7 +6,7 @@ public sealed interface PermissibleAction permits
     AclAction, ApplicationConfigAction,
     ConsumerGroupAction, SchemaAction,
     ConnectAction, ClusterConfigAction,
-    KsqlAction, TopicAction, AuditAction, ClientQuotaAction {
+    KsqlAction, TopicAction, AuditAction, ClientQuotaAction, CertificateAction {
 
   String name();
 

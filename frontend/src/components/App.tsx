@@ -6,6 +6,8 @@ import {
   errorPage,
   getNonExactPath,
   clusterNewConfigPath,
+  certificateCreatePath,
+  certificateListPath,
 } from 'lib/paths';
 import PageLoader from 'components/common/PageLoader/PageLoader';
 import { ThemeProvider } from 'styled-components';
@@ -30,6 +32,10 @@ const ClusterPage = React.lazy(
   () => import('components/ClusterPage/ClusterPage')
 );
 const ClusterConfigForm = React.lazy(() => import('widgets/ClusterConfigForm'));
+const CertificateList = React.lazy(() => import('widgets/CertificateList'));
+const CertificateConfigForm = React.lazy(
+  () => import('widgets/CertificateConfigForm')
+);
 const ErrorPage = React.lazy(() => import('components/ErrorPage/ErrorPage'));
 
 const queryClient = new QueryClient({
@@ -76,6 +82,14 @@ const App: React.FC = () => {
                         <Route
                           path={getNonExactPath(clusterNewConfigPath)}
                           element={<ClusterConfigForm />}
+                        />
+                        <Route
+                          path={getNonExactPath(certificateListPath)}
+                          element={<CertificateList />}
+                        />
+                        <Route
+                          path={getNonExactPath(certificateCreatePath)}
+                          element={<CertificateConfigForm />}
                         />
                         <Route
                           path={getNonExactPath(clusterPath())}

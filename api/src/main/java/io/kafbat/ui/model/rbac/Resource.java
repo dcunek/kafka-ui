@@ -3,6 +3,7 @@ package io.kafbat.ui.model.rbac;
 import io.kafbat.ui.model.rbac.permission.AclAction;
 import io.kafbat.ui.model.rbac.permission.ApplicationConfigAction;
 import io.kafbat.ui.model.rbac.permission.AuditAction;
+import io.kafbat.ui.model.rbac.permission.CertificateAction;
 import io.kafbat.ui.model.rbac.permission.ClientQuotaAction;
 import io.kafbat.ui.model.rbac.permission.ClusterConfigAction;
 import io.kafbat.ui.model.rbac.permission.ConnectAction;
@@ -36,7 +37,9 @@ public enum Resource {
 
   AUDIT(AuditAction.values()),
 
-  CLIENT_QUOTAS(ClientQuotaAction.values());
+  CLIENT_QUOTAS(ClientQuotaAction.values()),
+
+  CERTIFICATE(CertificateAction.values());
 
   private final List<PermissibleAction> actions;
 

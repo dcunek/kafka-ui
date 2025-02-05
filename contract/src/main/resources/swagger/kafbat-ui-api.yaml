@@ -31,6 +31,58 @@ paths:
                 items:
                   $ref: '#/components/schemas/Cluster'
 
+  /api/certificates:
+    get:
+      tags:
+        - Certificates
+      summary: getCertificates
+      operationId: getCertificates
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Certificate'
+
+  /api/certificates/download/{certificateUserName}:
+    get:
+      tags:
+        - Certificates
+      summary: downloadCertificate
+      operationId: downloadCertificate
+      parameters:
+        - name: certificateUserName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: File download success
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+
+  /api/certificates/create:
+    post:
+      tags:
+        - Certificates
+      summary: createCertificate
+      operationId: createCertificate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CertificateCreation'
+      responses:
+        201:
+          description: Certificate created
+
   /api/clusters/{clusterName}/cache:
     post:
       tags:
@@ -2438,6 +2490,36 @@ components:
         - LOGIN_FORM
         - LDAP
 
+    Certificate:
+      type: object
+      properties:
+        certificateUserName:
+          type: string
+        password:
+          type: string
+        creation:
+          type: string
+        expiration:
+          type: string
+        fileName:
+          type: string
+        adminLdapGroup:
+          type: string
+
+    CertificateCreation:
+      type: object
+      properties:
+        certificateUserName:
+          type: string
+        password:
+          type: string
+        expirationInDays:
+          type: number
+        adminLdapGroup:
+          type: string
+        restrictedLdapGroup:
+          type: string
+
     Cluster:
       type: object
       properties:
@@ -3962,6 +4044,7 @@ components:
         - ACL
         - AUDIT
         - CLIENT_QUOTAS
+        - CERTIFICATE
 
     ClientQuotas:
       type: object

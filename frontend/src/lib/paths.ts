@@ -293,6 +293,10 @@ export const clusterConfigPath = (
 const clusterNewConfigRelativePath = 'create-new-cluster';
 export const clusterNewConfigPath = `/ui/clusters/${clusterNewConfigRelativePath}`;
 
+// Certificates
+export const certificateListPath = '/ui/certificates';
+export const certificateCreatePath = '/ui/certificates/create-new-certificate';
+
 // ACL
 export const clusterAclRelativePath = 'acl';
 export const clusterAclNewRelativePath = 'create-new-acl';
