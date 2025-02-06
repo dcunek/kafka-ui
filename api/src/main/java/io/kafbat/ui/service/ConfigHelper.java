@@ -20,7 +20,7 @@ public class ConfigHelper {
 
   private static final String TRUSTSTORE_LOCATION = "/etc/kafkaui/secrets/dna-server-truststore.jks";
   private static final String TRUSTSTORE_PASSWORD = "password";
-  private static final String KAFKA_BOOTSTRAP = "broker:9093";
+  private static final String KAFKA_BOOTSTRAP = "broker1:9093";
   private static final String KAFKA_ADMIN_ROLE = "kafka-admin-role";
   public static final String KAFKA_ADMIN_GROUP = "kafka-admin-group";
 
